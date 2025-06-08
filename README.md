@@ -54,4 +54,4 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ## 📄 License
 
-MIT © [Your Name](https://github.com/yourusername)
+MIT © [Anique Ali](https://github.com/aniqueali29)
