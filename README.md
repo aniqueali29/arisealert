@@ -24,8 +24,8 @@
 
 ### CDN
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/soloalert/dist/soloalert.min.css">
-<script src="https://cdn.jsdelivr.net/npm/soloalert/dist/soloalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aniqueali29/soloalert/dist/soloalert.min.css">
+<script src="https://cdn.jsdelivr.net/gh/aniqueali29/soloalert/dist/soloalert.min.js"></script>
 ```
 
 ### NPM
