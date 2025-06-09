@@ -1,5 +1,5 @@
 /*!
- * SoloAlert v1.0.0
+ * AriseAlert v1.0.0
  * (c) 2025 Anique Ali
  * MIT License
  */
@@ -32,7 +32,7 @@ function runCode(code) {
         eval(code);
     } catch (error) {
         console.error('Error running code:', error);
-        SoloAlert.error('Code Error', 'Failed to execute the example code');
+        AriseAlert.error('Code Error', 'Failed to execute the example code');
     }
 }
 
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Basic Notification
 function showNotification() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'NOTIFICATION',
         message: 'You have acquired the qualifications<br>to be a Player. Will you accept?',
         icon: 'info-premium',
@@ -76,7 +76,7 @@ function showNotification() {
 
 // Job Change Alert
 function showJobChange() {
-    SoloAlert.jobChange({
+    AriseAlert.jobChange({
         title: 'NOTIFICATION',
         message: 'Your job has changed<br><br>[necromancer]<br><br>⚡<br><br>[shadow monarch]',
         icon: 'crown'
@@ -85,27 +85,27 @@ function showJobChange() {
 
 // Success Alert
 function showSuccess() {
-    SoloAlert.success('QUEST COMPLETE!', 'Dragon successfully defeated!<br>You gained 5000 XP and rare loot!');
+    AriseAlert.success('QUEST COMPLETE!', 'Dragon successfully defeated!<br>You gained 5000 XP and rare loot!');
 }
 
 // Error Alert
 function showError() {
-    SoloAlert.error('CRITICAL SYSTEM ERROR', 'FATAL ERROR DETECTED!<br>System integrity compromised.<br>Immediate action required!');
+    AriseAlert.error('CRITICAL SYSTEM ERROR', 'FATAL ERROR DETECTED!<br>System integrity compromised.<br>Immediate action required!');
 }
 
 // Warning Alert
 function showWarning() {
-    SoloAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!<br>Threat level: CATASTROPHIC<br>Evacuate immediately!');
+    AriseAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!<br>Threat level: CATASTROPHIC<br>Evacuate immediately!');
 }
 
 // Info Alert
 function showInfo() {
-    SoloAlert.info('SYSTEM INFO', 'Hunter registration system is online<br>All systems operational');
+    AriseAlert.info('SYSTEM INFO', 'Hunter registration system is online<br>All systems operational');
 }
 
 // Confirm Alert
 function showConfirm() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'ENTER DUNGEON?',
         message: 'This is a high-risk S-Rank dungeon<br>Danger Level: EXTREME',
         icon: 'shield',
@@ -114,16 +114,16 @@ function showConfirm() {
         cancelButtonText: 'Retreat'
     }).then((result) => {
         if (result.confirmed) {
-            SoloAlert.success('DUNGEON ENTERED!', 'Welcome to the Shadow Realm<br>Prepare for battle!');
+            AriseAlert.success('DUNGEON ENTERED!', 'Welcome to the Shadow Realm<br>Prepare for battle!');
         } else {
-            SoloAlert.info('WISE CHOICE', 'Sometimes retreat is the best strategy<br>Live to fight another day');
+            AriseAlert.info('WISE CHOICE', 'Sometimes retreat is the best strategy<br>Live to fight another day');
         }
     });
 }
 
 // Input Alert
 function showInput() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'ENTER YOUR NAME',
         message: 'Please enter your Hunter name:',
         icon: 'magic',
@@ -137,14 +137,14 @@ function showInput() {
         }
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('WELCOME!', `Hello, ${result.value}!<br>Your Hunter profile has been created.`);
+            AriseAlert.success('WELCOME!', `Hello, ${result.value}!<br>Your Hunter profile has been created.`);
         }
     });
 }
 
 // Email Input Alert
 function showEmail() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'ENTER EMAIL',
         message: 'Please enter your email address:',
         icon: 'magic',
@@ -159,14 +159,14 @@ function showEmail() {
         }
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('EMAIL SAVED!', `Email ${result.value} has been registered.`);
+            AriseAlert.success('EMAIL SAVED!', `Email ${result.value} has been registered.`);
         }
     });
 }
 
 // Password Input Alert
 function showPassword() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'SECURE ACCESS',
         message: 'Enter your Hunter ID password:',
         icon: 'lock',
@@ -180,14 +180,14 @@ function showPassword() {
         }
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('ACCESS GRANTED!', 'Welcome to the Hunter System<br>Authentication successful.');
+            AriseAlert.success('ACCESS GRANTED!', 'Welcome to the Hunter System<br>Authentication successful.');
         }
     });
 }
 
 // Number Input Alert
 function showNumber() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'SET POWER LEVEL',
         message: 'Enter your desired power level (1-100):',
         icon: 'diamond',
@@ -201,14 +201,14 @@ function showNumber() {
         }
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('POWER LEVEL SET!', `Your power level is now ${result.value}!`);
+            AriseAlert.success('POWER LEVEL SET!', `Your power level is now ${result.value}!`);
         }
     });
 }
 
 // Range Input Alert
 function showRange() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'ADJUST SETTINGS',
         message: 'Set your preferred difficulty level:',
         icon: 'lightning',
@@ -217,14 +217,14 @@ function showRange() {
         confirmButtonText: 'Apply Settings'
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('SETTINGS SAVED!', `Difficulty set to ${result.value}%`);
+            AriseAlert.success('SETTINGS SAVED!', `Difficulty set to ${result.value}%`);
         }
     });
 }
 
 // Select Alert
 function showSelect() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'CHOOSE YOUR CLASS',
         message: 'Select your Hunter class:',
         icon: 'crown',
@@ -239,14 +239,14 @@ function showSelect() {
         confirmButtonText: 'Select Class'
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('CLASS SELECTED!', `You are now a ${result.value.toUpperCase()}!`);
+            AriseAlert.success('CLASS SELECTED!', `You are now a ${result.value.toUpperCase()}!`);
         }
     });
 }
 
 // Textarea Alert
 function showTextarea() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'MISSION REPORT',
         message: 'Please provide a detailed mission report:',
         icon: 'magic',
@@ -260,14 +260,14 @@ function showTextarea() {
         }
     }).then(result => {
         if (result.confirmed) {
-            SoloAlert.success('REPORT SUBMITTED!', 'Your mission report has been recorded.');
+            AriseAlert.success('REPORT SUBMITTED!', 'Your mission report has been recorded.');
         }
     });
 }
 
 // Loading Alert
 function showLoading() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'LOADING...',
         message: 'Connecting to Shadow Realm...',
         icon: 'loading-premium',
@@ -278,7 +278,7 @@ function showLoading() {
 
 // Progress Alert
 function showProgress() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'LEVELING UP...',
         message: 'Experience Points Loading...',
         icon: 'diamond',
@@ -290,7 +290,7 @@ function showProgress() {
 
 // Timer Alert
 function showTimer() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'DUNGEON CLOSING',
         message: 'Time remaining...',
         icon: 'hourglass',
@@ -302,7 +302,7 @@ function showTimer() {
 
 // Toast Alert
 function showToast() {
-    SoloAlert.toast({
+    AriseAlert.toast({
         title: 'NEW ACHIEVEMENT!',
         message: 'First Kill Bonus +500 XP',
         icon: 'star',
@@ -313,7 +313,7 @@ function showToast() {
 
 // Image Alert
 function showImage() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'RARE ITEM ACQUIRED!',
         message: 'You found a legendary weapon!',
         icon: 'star',
@@ -327,7 +327,7 @@ function showImage() {
 // Multi-Step Alert
 function showSteps() {
     // Step 1
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'STEP 1 OF 3',
         message: 'Choose your weapon type:',
         icon: 'sword',
@@ -341,7 +341,7 @@ function showSteps() {
     }).then(result => {
         if (result.confirmed) {
             // Step 2
-            SoloAlert.fire({
+            AriseAlert.fire({
                 title: 'STEP 2 OF 3',
                 message: 'Set your power level (1-100):',
                 icon: 'lightning',
@@ -351,7 +351,7 @@ function showSteps() {
             }).then(result2 => {
                 if (result2.confirmed) {
                     // Step 3
-                    SoloAlert.fire({
+                    AriseAlert.fire({
                         title: 'STEP 3 OF 3',
                         message: 'Enter your Hunter motto:',
                         icon: 'magic',
@@ -360,7 +360,7 @@ function showSteps() {
                         confirmButtonText: 'Complete Setup'
                     }).then(result3 => {
                         if (result3.confirmed) {
-                            SoloAlert.success('SETUP COMPLETE!',
+                            AriseAlert.success('SETUP COMPLETE!',
                                 `Weapon: ${result.value}<br>` +
                                 `Power Level: ${result2.value}<br>` +
                                 `Motto: "${result3.value}"`
@@ -375,7 +375,7 @@ function showSteps() {
 
 // Custom Icon Alert
 function showCustomIcon() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'SHADOW MONARCH',
         message: 'The power of shadows flows through you<br>Your army awaits your command',
         icon: 'crown',
@@ -387,7 +387,7 @@ function showCustomIcon() {
 
 // HTML Alert
 function showHTML() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'RICH CONTENT',
         message: `
             <div style="text-align: center;">
@@ -420,7 +420,7 @@ function showHTML() {
 
 // Fire Alert
 function showFire() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'BURNING POWER!',
         message: 'Your fire magic has reached maximum level!<br>Enemies will tremble before your flames!',
         icon: 'fire',
@@ -431,7 +431,7 @@ function showFire() {
 
 // Heart Alert
 function showHeart() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'ALLY BOND FORMED',
         message: 'Your friendship level has increased!<br>Trust is the greatest weapon.',
         icon: 'heart',
@@ -442,7 +442,7 @@ function showHeart() {
 
 // Skull Alert
 function showSkull() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'DEATH MAGIC UNLOCKED',
         message: 'You have learned forbidden necromancy!<br>Use this power wisely...',
         icon: 'skull',
@@ -453,7 +453,7 @@ function showSkull() {
 
 // Gear Alert
 function showGear() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'SYSTEM MAINTENANCE',
         message: 'Hunter System is being updated...<br>New features incoming!',
         icon: 'gear',
@@ -464,7 +464,7 @@ function showGear() {
 
 // Shield Alert
 function showShield() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'DEFENSE BOOST!',
         message: 'Your shield mastery has improved!<br>Physical damage reduced by 50%',
         icon: 'shield',
@@ -475,7 +475,7 @@ function showShield() {
 
 // Diamond Alert
 function showDiamond() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'RARE GEM FOUND!',
         message: 'You discovered an ancient diamond!<br>This could enhance your equipment significantly.',
         icon: 'diamond',
@@ -491,14 +491,14 @@ function showDiamond() {
 
 // Battle Result Alert
 function showBattleResult() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'BATTLE COMPLETE!',
         message: 'Victory achieved against the Shadow Beast!<br>Calculating rewards...',
         icon: 'sword',
         showButtons: false,
         timer: 2000
     }).then(() => {
-        SoloAlert.fire({
+        AriseAlert.fire({
             title: 'REWARDS EARNED!',
             message: 'EXP: +2,500<br>Gold: +1,000<br>Item: Shadow Essence',
             icon: 'star',
@@ -509,7 +509,7 @@ function showBattleResult() {
 
 // Magic Spell Alert
 function showMagicSpell() {
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'CAST SPELL',
         message: 'Choose your magic spell:',
         icon: 'magic',
@@ -531,7 +531,7 @@ function showMagicSpell() {
             };
 
             const effect = spellEffects[result.value];
-            SoloAlert.fire({
+            AriseAlert.fire({
                 title: 'SPELL CAST!',
                 message: effect.message,
                 icon: effect.icon,
@@ -550,7 +550,7 @@ function showDungeonExplorer() {
         'nightmare': { icon: 'skull', danger: 'EXTREME', reward: 'Legendary Artifacts' }
     };
 
-    SoloAlert.fire({
+    AriseAlert.fire({
         title: 'SELECT DUNGEON',
         message: 'Choose your next challenge:',
         icon: 'crown',
@@ -565,7 +565,7 @@ function showDungeonExplorer() {
     }).then(result => {
         if (result.confirmed) {
             const selected = dungeons[result.value];
-            SoloAlert.fire({
+            AriseAlert.fire({
                 title: 'DUNGEON BRIEFING',
                 message: `Danger Level: ${selected.danger}<br>Potential Rewards: ${selected.reward}<br><br>Are you prepared for battle?`,
                 icon: selected.icon,

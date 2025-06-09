@@ -1,10 +1,10 @@
 /*!
- * SoloAlert v1.0.0
+ * AriseAlert v1.0.0
  * (c) 2025 Anique Ali
  * MIT License
  */
 
-class SoloAlert {
+class AriseAlert {
     constructor() {
       this.overlay = null;
       this.container = null;
@@ -23,13 +23,13 @@ class SoloAlert {
     }
   
     static fire(e = {}) {
-      return (new SoloAlert).show(e);
+      return (new AriseAlert).show(e);
     }
   
     static setColors(e) {
-      var t = new SoloAlert;
+      var t = new AriseAlert;
       t.colors = {...t.colors, ...e};
-      SoloAlert.prototype.colors = t.colors;
+      AriseAlert.prototype.colors = t.colors;
     }
   
     static getPremiumIcon(e, t = "") {
@@ -43,28 +43,28 @@ class SoloAlert {
         "info-premium": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#1e3a8a" opacity="0.3"/><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#ffffff"/></svg>',
         "error-premium": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#7f1d1d" opacity="0.4"/><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z" fill="#450a0a"/></svg>',
         "warning-premium": '<svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="#451a03"/></svg>',
-        "loading-premium": '<svg viewBox="0 0 24 24" class="soloalert-icon-spin"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" fill="#00d4ff"/></svg>',
-        hourglass: '<svg viewBox="0 0 24 24" class="soloalert-icon-pulse"><path d="M6,2V8H6V8L10,12L6,16V16H6V22H18V16H18V16L14,12L18,8V8H18V2H6M16,16.5V20H8V16.5L12,12.5L16,16.5M12,11.5L8,7.5V4H16V7.5L12,11.5Z" fill="#ffa502"/></svg>',
-        fire: '<svg viewBox="0 0 24 24" class="soloalert-icon-bounce"><path d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 13.22C9.11 13.32 9.15 13.42 9.15 13.55C9.15 13.77 9 13.97 8.8 14.05C8.57 14.15 8.33 14.09 8.14 13.93C8.08 13.88 8.04 13.83 8 13.76C6.87 12.33 6.69 10.28 7.45 8.64C5.78 10 4.87 12.3 5 14.47C5.06 14.97 5.12 15.47 5.29 15.97C5.43 16.57 5.7 17.17 6 17.7C7.08 19.43 8.95 20.67 10.96 20.92C13.1 21.19 15.39 20.8 17.03 19.32C18.86 17.66 19.5 15 18.56 12.72L18.43 12.46C18.22 12 17.66 11.2 17.66 11.2Z" fill="#ff6b35"/></svg>',
-        lightning: '<svg viewBox="0 0 24 24" class="soloalert-icon-pulse"><path d="M11,4H13L14.5,6.5H17.5L12.5,13.5L13.5,10.5H10.5L11,4M4.5,20.5V19H19.5V20.5H4.5Z" fill="#ffd700"/></svg>',
-        star: '<svg viewBox="0 0 24 24" class="soloalert-icon-bounce"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" fill="#ffd700"/></svg>',
+        "loading-premium": '<svg viewBox="0 0 24 24" class="arisealert-icon-spin"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" fill="#00d4ff"/></svg>',
+        hourglass: '<svg viewBox="0 0 24 24" class="arisealert-icon-pulse"><path d="M6,2V8H6V8L10,12L6,16V16H6V22H18V16H18V16L14,12L18,8V8H18V2H6M16,16.5V20H8V16.5L12,12.5L16,16.5M12,11.5L8,7.5V4H16V7.5L12,11.5Z" fill="#ffa502"/></svg>',
+        fire: '<svg viewBox="0 0 24 24" class="arisealert-icon-bounce"><path d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 13.22C9.11 13.32 9.15 13.42 9.15 13.55C9.15 13.77 9 13.97 8.8 14.05C8.57 14.15 8.33 14.09 8.14 13.93C8.08 13.88 8.04 13.83 8 13.76C6.87 12.33 6.69 10.28 7.45 8.64C5.78 10 4.87 12.3 5 14.47C5.06 14.97 5.12 15.47 5.29 15.97C5.43 16.57 5.7 17.17 6 17.7C7.08 19.43 8.95 20.67 10.96 20.92C13.1 21.19 15.39 20.8 17.03 19.32C18.86 17.66 19.5 15 18.56 12.72L18.43 12.46C18.22 12 17.66 11.2 17.66 11.2Z" fill="#ff6b35"/></svg>',
+        lightning: '<svg viewBox="0 0 24 24" class="arisealert-icon-pulse"><path d="M11,4H13L14.5,6.5H17.5L12.5,13.5L13.5,10.5H10.5L11,4M4.5,20.5V19H19.5V20.5H4.5Z" fill="#ffd700"/></svg>',
+        star: '<svg viewBox="0 0 24 24" class="arisealert-icon-bounce"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" fill="#ffd700"/></svg>',
         skull: '<svg viewBox="0 0 24 24"><path d="M12,2A9,9 0 0,0 3,11C3,14.03 4.53,16.82 7,18.47V22H9V19H11V22H13V19H15V22H17V18.46C19.47,16.81 21,14.03 21,11A9,9 0 0,0 12,2M8,11A2,2 0 0,1 10,13A2,2 0 0,1 8,15A2,2 0 0,1 6,13A2,2 0 0,1 8,11M16,11A2,2 0 0,1 18,13A2,2 0 0,1 16,15A2,2 0 0,1 14,13A2,2 0 0,1 16,11M12,14L13.5,17H10.5L12,14Z" fill="#e74c3c"/></svg>',
-        heart: '<svg viewBox="0 0 24 24" class="soloalert-icon-pulse"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" fill="#e91e63"/></svg>',
+        heart: '<svg viewBox="0 0 24 24" class="arisealert-icon-pulse"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" fill="#e91e63"/></svg>',
         lock: '<svg viewBox="0 0 24 24"><path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" fill="#795548"/></svg>',
-        gear: '<svg viewBox="0 0 24 24" class="soloalert-icon-spin"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" fill="#607d8b"/></svg>'
+        gear: '<svg viewBox="0 0 24 24" class="arisealert-icon-spin"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" fill="#607d8b"/></svg>'
       };
-      return `<div class="soloalert-premium-icon ${t}">${o[e]||o["info-premium"]}</div>`;
+      return `<div class="arisealert-premium-icon ${t}">${o[e]||o["info-premium"]}</div>`;
     }
   
     renderIcon(e) {
       return "string" == typeof e && e.includes("-premium") || 
              ["sword","shield","crown","diamond","fire","lightning","star","hourglass","magic","skull","heart","lock","gear"].includes(e) ? 
-             SoloAlert.getPremiumIcon(e) : e;
+             AriseAlert.getPremiumIcon(e) : e;
     }
   
     static toast(e = {}) {
       let t = document.createElement("div");
-      t.className = "soloalert-toast";
+      t.className = "arisealert-toast";
       var o = e.position || "top-right";
       switch(t.style.position = "fixed", o) {
         case "top-left": t.style.top = "20px", t.style.left = "20px"; break;
@@ -73,12 +73,12 @@ class SoloAlert {
         case "bottom-right": t.style.bottom = "20px", t.style.right = "20px";
       }
       t.innerHTML = `
-        <div class="soloalert-panel" style="padding: 20px; min-width: 300px;">
-          <div class="soloalert-icon">
+        <div class="arisealert-panel" style="padding: 20px; min-width: 300px;">
+          <div class="arisealert-icon">
             <div class="icon" style="font-size: 24px;">${e.icon||"🍞"}</div>
           </div>
-          <div class="soloalert-title" style="font-size: 16px; margin-bottom: 8px;">${e.title}</div>
-          <div class="soloalert-message" style="font-size: 14px;">${e.message}</div>
+          <div class="arisealert-title" style="font-size: 16px; margin-bottom: 8px;">${e.title}</div>
+          <div class="arisealert-message" style="font-size: 14px;">${e.message}</div>
         </div>
       `;
       document.body.appendChild(t);
@@ -135,7 +135,7 @@ class SoloAlert {
   
     createOverlay() {
       this.overlay = document.createElement("div");
-      this.overlay.className = "soloalert-overlay";
+      this.overlay.className = "arisealert-overlay";
       this.overlay.addEventListener("click", e => {
         e.target === this.overlay && this.close({confirmed: !1});
       });
@@ -143,47 +143,47 @@ class SoloAlert {
   
     createContainer() {
       this.container = document.createElement("div");
-      this.container.className = "soloalert-container";
+      this.container.className = "arisealert-container";
       this.overlay.appendChild(this.container);
     }
   
     createPanel(e) {
       var t, o = document.createElement("div");
-      o.className = "soloalert-panel soloalert-" + e.type;
+      o.className = "arisealert-panel arisealert-" + e.type;
       e.customBg ? o.style.background = e.customBg : 
         (t = this.colors[e.type] || this.colors.default, o.style.background = t);
       
       let r = "", i = "", s = "", n = "", l = "";
       e.input && (r = this.createInputHtml(e));
-      e.image && (i = `<img src="${e.image}" class="soloalert-image" alt="Alert Image">`);
+      e.image && (i = `<img src="${e.image}" class="arisealert-image" alt="Alert Image">`);
       e.progress && (s = `
-        <div class="soloalert-progress">
-          <div class="soloalert-progress-bar" id="soloalert-progress-bar"></div>
+        <div class="arisealert-progress">
+          <div class="arisealert-progress-bar" id="arisealert-progress-bar"></div>
         </div>
       `);
-      e.showTimer && (n = `<div class="soloalert-timer" id="soloalert-timer">${e.timerDuration}</div>`);
-      "loading" === e.icon && (l = '<div class="soloalert-spinner"></div>');
+      e.showTimer && (n = `<div class="arisealert-timer" id="arisealert-timer">${e.timerDuration}</div>`);
+      "loading" === e.icon && (l = '<div class="arisealert-spinner"></div>');
       
       o.innerHTML = `
-        <div class="soloalert-corners">
-          <div class="soloalert-corner top-left"></div>
-          <div class="soloalert-corner top-right"></div>
-          <div class="soloalert-corner bottom-left"></div>
-          <div class="soloalert-corner bottom-right"></div>
+        <div class="arisealert-corners">
+          <div class="arisealert-corner top-left"></div>
+          <div class="arisealert-corner top-right"></div>
+          <div class="arisealert-corner bottom-left"></div>
+          <div class="arisealert-corner bottom-right"></div>
         </div>
         
-        <div class="soloalert-line top"></div>
-        <div class="soloalert-line bottom"></div>
+        <div class="arisealert-line top"></div>
+        <div class="arisealert-line bottom"></div>
         
         ${"loading" !== e.icon ? `
-          <div class="soloalert-icon">
+          <div class="arisealert-icon">
             <div class="icon">${this.renderIcon(e.icon)}</div>
           </div>
         ` : l}
         
-        <div class="soloalert-title">${e.title}</div>
+        <div class="arisealert-title">${e.title}</div>
         
-        <div class="soloalert-message">${e.message}</div>
+        <div class="arisealert-message">${e.message}</div>
         
         ${i}
         ${s}
@@ -201,23 +201,23 @@ class SoloAlert {
         case "text":
         case "email":
         case "password":
-          return `<input type="${t.input}" class="soloalert-input" placeholder="${t.placeholder}" id="soloalert-input">`;
+          return `<input type="${t.input}" class="arisealert-input" placeholder="${t.placeholder}" id="arisealert-input">`;
         case "textarea":
-          return `<textarea class="soloalert-input" placeholder="${t.placeholder}" id="soloalert-input" rows="4"></textarea>`;
+          return `<textarea class="arisealert-input" placeholder="${t.placeholder}" id="arisealert-input" rows="4"></textarea>`;
         case "select":
           let e = "";
           for(var [o,r] of Object.entries(t.inputOptions)) e += `<option value="${o}">${r}</option>`;
           return `
-            <select class="soloalert-select" id="soloalert-input">
+            <select class="arisealert-select" id="arisealert-input">
               <option value="">Choose an option...</option>
               ${e}
             </select>
           `;
         case "number":
-          return `<input type="number" class="soloalert-input" placeholder="${t.placeholder}" id="soloalert-input">`;
+          return `<input type="number" class="arisealert-input" placeholder="${t.placeholder}" id="arisealert-input">`;
         case "range":
           return `
-            <input type="range" class="soloalert-input" id="soloalert-input" min="0" max="100" value="50">
+            <input type="range" class="arisealert-input" id="arisealert-input" min="0" max="100" value="50">
             <div style="text-align: center; color: #00d4ff; margin-top: 10px;">
               Value: <span id="range-value">50</span>
             </div>
@@ -227,7 +227,7 @@ class SoloAlert {
     }
   
     startProgress(duration) {
-        const progressBar = document.getElementById('soloalert-progress-bar');
+        const progressBar = document.getElementById('arisealert-progress-bar');
         if (!progressBar) return;
 
         let progress = 0;
@@ -247,7 +247,7 @@ class SoloAlert {
     }
   
     startTimer(t) {
-      let o = document.getElementById("soloalert-timer");
+      let o = document.getElementById("arisealert-timer");
       if(o) {
         let e = t;
         this.timerInterval = setInterval(() => {
@@ -258,8 +258,8 @@ class SoloAlert {
     }
   
     setupButtonEvents(t, e) {
-      var o = t.querySelector(".soloalert-btn:not(.cancel)"),
-          r = t.querySelector(".soloalert-btn.cancel");
+      var o = t.querySelector(".arisealert-btn:not(.cancel)"),
+          r = t.querySelector(".arisealert-btn.cancel");
       o && o.addEventListener("click", () => { this.handleConfirm(e) });
       r && r.addEventListener("click", () => { this.close({confirmed: !1, dismissed: !0}) });
       
@@ -272,7 +272,7 @@ class SoloAlert {
   
     handleConfirm(e) {
       if(e.input) {
-        var t = document.getElementById("soloalert-input"), t = t ? t.value : "";
+        var t = document.getElementById("arisealert-input"), t = t ? t.value : "";
         if(e.validator) {
           e = e.validator(t);
           if(e) return void this.showValidationError(e);
@@ -284,22 +284,22 @@ class SoloAlert {
     }
   
     showValidationError(e) {
-      var t = document.querySelector(".soloalert-validation-error"),
+      var t = document.querySelector(".arisealert-validation-error"),
           t = (t && t.remove(), document.createElement("div")),
-          e = (t.className = "soloalert-validation-error", t.style.cssText = `
+          e = (t.className = "arisealert-validation-error", t.style.cssText = `
             color: #e74c3c;
             font-size: 12px;
             margin-top: 10px;
             text-align: center;
             animation: shake 0.5s ease-in-out;
-          `, t.textContent = e, document.getElementById("soloalert-input"));
+          `, t.textContent = e, document.getElementById("arisealert-input"));
       e && (e.style.borderColor = "#e74c3c", e.parentNode.insertBefore(t, e.nextSibling));
     }
   
     createButtons(e) {
-      let t = '<div class="soloalert-actions">';
-      e.showCancelButton && (t += `<button class="soloalert-btn cancel">${e.cancelButtonText}</button>`);
-      t = t + `<button class="soloalert-btn">${e.confirmButtonText}</button>` + "</div>";
+      let t = '<div class="arisealert-actions">';
+      e.showCancelButton && (t += `<button class="arisealert-btn cancel">${e.cancelButtonText}</button>`);
+      t = t + `<button class="arisealert-btn">${e.confirmButtonText}</button>` + "</div>";
       return t;
     }
   
@@ -498,4 +498,4 @@ class SoloAlert {
     }
   }
   
-  window.SoloAlert = SoloAlert;
+  window.AriseAlert = AriseAlert;

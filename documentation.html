@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoloAlert - Documentation</title>
+    <title>AriseAlert - Documentation</title>
     <link rel="stylesheet" href="./src/main.css">
-    <link rel="stylesheet" href="./src/soloalert.css">
+    <link rel="stylesheet" href="./src/arisealert.css">
     <style>
         .example-card {
             margin-bottom: 30px;
@@ -77,7 +77,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>⚔️ SoloAlert</h1>
+            <h1>⚔️ AriseAlert</h1>
             <p>Enhanced Solo Leveling Alert Library with Customizable Colors</p>
         </div>
 
@@ -107,8 +107,8 @@
                                     <h4>📦 CDN (Recommended)</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yourusername/soloalert/dist/soloalert.min.css"&gt;
-        &lt;script src="https://cdn.jsdelivr.net/gh/yourusername/soloalert/dist/soloalert.min.js"&gt;&lt;/script&gt;</code></pre>
+                                        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yourusername/arisealert/dist/arisealert.min.css"&gt;
+        &lt;script src="https://cdn.jsdelivr.net/gh/yourusername/arisealert/dist/arisealert.min.js"&gt;&lt;/script&gt;</code></pre>
                                     </div>
                                 </div>
 
@@ -116,8 +116,8 @@
                                     <h4>📁 Local Files</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>&lt;link rel="stylesheet" href="path/to/soloalert.css"&gt;
-     &lt;script src="path/to/soloalert.js"&gt;&lt;/script&gt;</code></pre>
+                                        <pre><code>&lt;link rel="stylesheet" href="path/to/arisealert.css"&gt;
+     &lt;script src="path/to/arisealert.js"&gt;&lt;/script&gt;</code></pre>
                                     </div>
                                 </div>
 
@@ -125,9 +125,9 @@
                                     <h4>📦 NPM Package</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>npm install soloalert
+                                        <pre><code>npm install arisealert
                                             # or
-                                            yarn add soloalert
+                                            yarn add arisealert
                                         </code></pre>
                                     </div>
                                 </div>
@@ -146,16 +146,16 @@
                                 <div class="code-buttons">
                                     <button class="copy-btn" onclick="copyCode(this)" aria-label="Copy code">📋
                                         Copy</button>
-                                    <button class="run-btn" onclick="runCode(`          SoloAlert.fire({
+                                    <button class="run-btn" onclick="runCode(`          AriseAlert.fire({
     title: 'Hello World!',
-    message: 'Your first SoloAlert!',
+    message: 'Your first AriseAlert!',
     icon: '👋'
 });`)" aria-label="Run code">▶️ Try It</button>
                                 </div>
 
-                                <pre><code>SoloAlert.fire({
+                                <pre><code>AriseAlert.fire({
     title: 'Hello World!',
-    message: 'Your first SoloAlert!',
+    message: 'Your first AriseAlert!',
     icon: '👋'
 });</code></pre>
                             </div>
@@ -181,20 +181,20 @@
                         </div>
                         <div class="code-block">
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.info('SYSTEM INFO', 'All systems operational');`)">▶️
+                                onclick="runCode(`AriseAlert.info('SYSTEM INFO', 'All systems operational');`)">▶️
                                 Demo</button>
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <pre><code>// Info Alert
-SoloAlert.info('SYSTEM INFO', 'All systems operational');
+AriseAlert.info('SYSTEM INFO', 'All systems operational');
 
 // Success Alert
-SoloAlert.success('QUEST COMPLETE!', 'Dragon defeated!');
+AriseAlert.success('QUEST COMPLETE!', 'Dragon defeated!');
 
 // Error Alert
-SoloAlert.error('CRITICAL ERROR', 'System compromised!');
+AriseAlert.error('CRITICAL ERROR', 'System compromised!');
 
 // Warning Alert
-SoloAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
+AriseAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                         </div>
                     </div>
 
@@ -212,9 +212,9 @@ SoloAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.jobChange({title: 'NOTIFICATION', message: 'Job changed to Shadow Monarch'});`)">▶️
+                                onclick="runCode(`AriseAlert.jobChange({title: 'NOTIFICATION', message: 'Job changed to Shadow Monarch'});`)">▶️
                                 Demo</button>
-                            <pre><code>SoloAlert.jobChange({
+                            <pre><code>AriseAlert.jobChange({
   title: 'NOTIFICATION',
   message: 'Your job has changed&lt;br&gt;&lt;br&gt;[necromancer] → [shadow monarch]',
   icon: 'crown'
@@ -236,9 +236,9 @@ SoloAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.fire({title: 'CONFIRM?', message: 'Proceed?', showCancelButton: true}).then(result => { if(result.confirmed) SoloAlert.success('CONFIRMED!', 'Action completed'); });`)">▶️
+                                onclick="runCode(`AriseAlert.fire({title: 'CONFIRM?', message: 'Proceed?', showCancelButton: true}).then(result => { if(result.confirmed) AriseAlert.success('CONFIRMED!', 'Action completed'); });`)">▶️
                                 Demo</button>
-                            <pre><code>SoloAlert.fire({
+                            <pre><code>AriseAlert.fire({
   title: 'ENTER DUNGEON?',
   message: 'High-risk S-Rank dungeon',
   icon: 'shield',
@@ -247,7 +247,7 @@ SoloAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
   cancelButtonText: 'Retreat'
 }).then((result) => {
   if (result.confirmed) {
-    SoloAlert.success('DUNGEON ENTERED!', 'Prepare for battle!');
+    AriseAlert.success('DUNGEON ENTERED!', 'Prepare for battle!');
   }
 });</code></pre>
                         </div>
@@ -267,31 +267,31 @@ SoloAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.fire({title: 'ENTER NAME', input: 'text', placeholder: 'Your name'});`)">▶️
+                                onclick="runCode(`AriseAlert.fire({title: 'ENTER NAME', input: 'text', placeholder: 'Your name'});`)">▶️
                                 Demo</button>
                             <pre><code>// Text Input
-SoloAlert.fire({
+AriseAlert.fire({
   title: 'ENTER NAME',
   input: 'text',
   placeholder: 'Hunter Name'
 });
 
 // Email Input
-SoloAlert.fire({
+AriseAlert.fire({
   title: 'ENTER EMAIL',
   input: 'email',
   placeholder: 'your@email.com'
 });
 
 // Password Input
-SoloAlert.fire({
+AriseAlert.fire({
   title: 'ENTER PASSWORD',
   input: 'password',
   placeholder: 'Secure password'
 });
 
 // Select Input
-SoloAlert.fire({
+AriseAlert.fire({
   title: 'CHOOSE CLASS',
   input: 'select',
   options: {
@@ -302,7 +302,7 @@ SoloAlert.fire({
 });
 
 // Textarea
-SoloAlert.fire({
+AriseAlert.fire({
   title: 'MISSION REPORT',
   input: 'textarea',
   placeholder: 'Details...'
@@ -324,17 +324,17 @@ SoloAlert.fire({
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.loading({title: 'LOADING...', timer: 2000});`)">▶️
+                                onclick="runCode(`AriseAlert.loading({title: 'LOADING...', timer: 2000});`)">▶️
                                 Demo</button>
                             <pre><code>// Loading Spinner
-SoloAlert.loading({
+AriseAlert.loading({
   title: 'LOADING...',
   message: 'Processing request',
   timer: 3000
 });
 
 // Progress Bar
-SoloAlert.fire({
+AriseAlert.fire({
   title: 'LEVELING UP...',
   progress: true,
   timer: 3000
@@ -355,9 +355,9 @@ SoloAlert.fire({
                         </div>
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                            <button class="run-btn" onclick="runCode(`SoloAlert.timer({timerDuration: 5});`)">▶️
+                            <button class="run-btn" onclick="runCode(`AriseAlert.timer({timerDuration: 5});`)">▶️
                                 Demo</button>
-                            <pre><code>SoloAlert.timer({
+                            <pre><code>AriseAlert.timer({
   title: 'DUNGEON CLOSING',
   timerDuration: 10,
   showButtons: false
@@ -379,9 +379,9 @@ SoloAlert.fire({
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.toast({title: 'ACHIEVEMENT!', message: '+500 XP'});`)">▶️
+                                onclick="runCode(`AriseAlert.toast({title: 'ACHIEVEMENT!', message: '+500 XP'});`)">▶️
                                 Demo</button>
-                            <pre><code>SoloAlert.toast({
+                            <pre><code>AriseAlert.toast({
   title: 'NEW ACHIEVEMENT!',
   message: 'First Kill Bonus +500 XP',
   icon: 'star',
@@ -405,9 +405,9 @@ SoloAlert.fire({
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.fire({title: 'ITEM FOUND!', image: 'https://via.placeholder.com/200', icon: 'star'});`)">▶️
+                                onclick="runCode(`AriseAlert.fire({title: 'ITEM FOUND!', image: 'https://via.placeholder.com/200', icon: 'star'});`)">▶️
                                 Demo</button>
-                            <pre><code>SoloAlert.fire({
+                            <pre><code>AriseAlert.fire({
   title: 'RARE ITEM ACQUIRED!',
   message: 'Legendary weapon found!',
   icon: 'star',
@@ -434,7 +434,7 @@ SoloAlert.fire({
                             <button class="run-btn" onclick="showStats()">▶️ Demo</button>
 
                             <pre><code>function showStats() {
-    SoloAlert.fire({
+    AriseAlert.fire({
       title: 'PLAYER STATS',
       message: \`
         &lt;div style="text-align: center"&gt;
@@ -466,10 +466,10 @@ SoloAlert.fire({
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.fire({title: 'STEP 1', message: 'First step', confirmButtonText: 'Next'}).then(() => SoloAlert.fire({title: 'STEP 2', message: 'Second step', confirmButtonText: 'Next'})).then(() => SoloAlert.fire({title: 'STEP 3', message: 'Steps Completed'}));`)">▶️
+                                onclick="runCode(`AriseAlert.fire({title: 'STEP 1', message: 'First step', confirmButtonText: 'Next'}).then(() => AriseAlert.fire({title: 'STEP 2', message: 'Second step', confirmButtonText: 'Next'})).then(() => AriseAlert.fire({title: 'STEP 3', message: 'Steps Completed'}));`)">▶️
                                 Demo</button>
 
-                            <pre><code>SoloAlert.fire({
+                            <pre><code>AriseAlert.fire({
   title: 'STEP 1 OF 3',
   message: 'Choose weapon type:',
   input: 'select',
@@ -477,14 +477,14 @@ SoloAlert.fire({
   confirmButtonText: 'Next'
 }).then(result => {
   if (result.confirmed) {
-    SoloAlert.fire({
+    AriseAlert.fire({
       title: 'STEP 2 OF 3',
       message: 'Set power level:',
       input: 'number',
       confirmButtonText: 'Next'
     }).then(result2 => {
       if (result2.confirmed) {
-        SoloAlert.fire({
+        AriseAlert.fire({
           title: 'STEP 3 OF 3',
           message: 'Enter motto:',
           input: 'text',
@@ -511,9 +511,9 @@ SoloAlert.fire({
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
-                                onclick="runCode(`SoloAlert.fire({title: 'SHADOW MONARCH', icon: 'crown', customBg: '#1a0033'});`)">▶️
+                                onclick="runCode(`AriseAlert.fire({title: 'SHADOW MONARCH', icon: 'crown', customBg: '#1a0033'});`)">▶️
                                 Demo</button>
-                            <pre><code>SoloAlert.fire({
+                            <pre><code>AriseAlert.fire({
   title: 'SHADOW MONARCH',
   message: 'Power of shadows flows through you',
   icon: 'crown', // Premium icon
@@ -534,7 +534,7 @@ SoloAlert.fire({
                             <div class="api-methods">
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.fire(options)</code>
+                                        <code>AriseAlert.fire(options)</code>
                                         <span class="return-type">→ Promise</span>
                                     </div>
                                     <p>Main method to display alerts with full customization options.</p>
@@ -542,7 +542,7 @@ SoloAlert.fire({
 
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.success(title, message)</code>
+                                        <code>AriseAlert.success(title, message)</code>
                                         <span class="return-type">→ Promise</span>
                                     </div>
                                     <p>Quick success alert with green theme.</p>
@@ -550,7 +550,7 @@ SoloAlert.fire({
 
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.error(title, message)</code>
+                                        <code>AriseAlert.error(title, message)</code>
                                         <span class="return-type">→ Promise</span>
                                     </div>
                                     <p>Quick error alert with red theme and shake animation.</p>
@@ -558,7 +558,7 @@ SoloAlert.fire({
 
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.warning(title, message)</code>
+                                        <code>AriseAlert.warning(title, message)</code>
                                         <span class="return-type">→ Promise</span>
                                     </div>
                                     <p>Quick warning alert with orange theme and pulse effect.</p>
@@ -566,7 +566,7 @@ SoloAlert.fire({
 
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.info(title, message)</code>
+                                        <code>AriseAlert.info(title, message)</code>
                                         <span class="return-type">→ Promise</span>
                                     </div>
                                     <p>Quick info alert with blue theme.</p>
@@ -574,7 +574,7 @@ SoloAlert.fire({
 
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.toast(options)</code>
+                                        <code>AriseAlert.toast(options)</code>
                                         <span class="return-type">→ Promise</span>
                                     </div>
                                     <p>Non-blocking toast notification.</p>
@@ -582,7 +582,7 @@ SoloAlert.fire({
 
                                 <div class="method-item">
                                     <div class="method-signature">
-                                        <code>SoloAlert.setColors(colors)</code>
+                                        <code>AriseAlert.setColors(colors)</code>
                                         <span class="return-type">→ void</span>
                                     </div>
                                     <p>Set custom color scheme for all alerts.</p>
@@ -650,7 +650,7 @@ SoloAlert.fire({
                                     <h4>Purple Galaxy</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>SoloAlert.setColors({
+                                        <pre><code>AriseAlert.setColors({
     default: '#4c1d95',
     success: '#166534',
     error: '#991b1b',
@@ -665,7 +665,7 @@ SoloAlert.fire({
                                     <h4>Sunset Pink</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>SoloAlert.setColors({
+                                        <pre><code>AriseAlert.setColors({
     default: '#be185d',
     success: '#15803d',
     error: '#dc2626',
@@ -680,7 +680,7 @@ SoloAlert.fire({
                                     <h4>Ocean Blue</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>SoloAlert.setColors({
+                                        <pre><code>AriseAlert.setColors({
     default: '#1e40af',
     success: '#059669',
     error: '#dc2626',
@@ -698,7 +698,7 @@ SoloAlert.fire({
                                     <h4>Entrance Animations</h4>
                                     <div class="code-block">
                                         <pre><code>/* Add custom CSS animations */
-.soloalert-container.bounce-in {
+.arisealert-container.bounce-in {
     animation: bounceIn 0.6s ease-out;
 }
 
@@ -726,9 +726,9 @@ SoloAlert.fire({
                                 <div class="code-block">
                                     <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                                     <pre><code>async function showSequence() {
-            await SoloAlert.info('Step 1', 'Starting process...');
-            await SoloAlert.warning('Step 2', 'Processing data...');
-            await SoloAlert.success('Complete!', 'All done!');
+            await AriseAlert.info('Step 1', 'Starting process...');
+            await AriseAlert.warning('Step 2', 'Processing data...');
+            await AriseAlert.success('Complete!', 'All done!');
         }</code></pre>
                                 </div>
                             </div>
@@ -738,7 +738,7 @@ SoloAlert.fire({
                                 <div class="code-block">
                                     <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                                     <pre><code>function showUserStats(user) {
-            SoloAlert.fire({
+            AriseAlert.fire({
                 title: `Welcome ${user.name}!`,
                 message: `
                     &lt;div class="user-stats"&gt;
@@ -897,14 +897,14 @@ SoloAlert.fire({
                     eval(code);
                 } catch (error) {
                     console.error('Error running code:', error);
-                    SoloAlert.error('Code Error', 'Failed to execute the example code');
+                    AriseAlert.error('Code Error', 'Failed to execute the example code');
                 }
             }
         </script>
 
         <script>
             function showStats() {
-                SoloAlert.fire({
+                AriseAlert.fire({
                     title: 'PLAYER STATS',
                     message: `
           <div style="text-align: center">
@@ -921,7 +921,7 @@ SoloAlert.fire({
         </script>
 
         <script src="./src/main.js"></script>
-        <script src="./src/soloalert.js"></script>
+        <script src="./src/arisealert.js"></script>
 
 </body>
 

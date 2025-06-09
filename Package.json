@@ -1,15 +1,15 @@
 {
-    "name": "soloalert",
+    "name": "arisealert",
     "version": "1.0.0",
     "description": "Enhanced Solo Leveling styled alert library with customizable colors and animations.",
-    "main": "dist/soloalert.min.js",
-    "style": "dist/soloalert.min.css",
+    "main": "dist/arisealert.min.js",
+    "style": "dist/arisealert.min.css",
     "scripts": {
         "build": "npm run minify-css && npm run minify-js",
-        "minify-css": "cleancss --format breaksWith=lf -O2 --source-map -o dist/soloalert.min.css src/soloalert.css",
-        "minify-js": "uglifyjs src/soloalert.js -o dist/soloalert.min.js -c -m --comments --source-map",
+        "minify-css": "cleancss --format breaksWith=lf -O2 --source-map -o dist/arisealert.min.css src/arisealert.css",
+        "minify-js": "uglifyjs src/arisealert.js -o dist/arisealert.min.js -c -m --comments --source-map",
         "watch": "chokidar 'src/*.{js,css}' -c 'npm run build'",
-        "test": "node -e \"require('./dist/soloalert.min.js'); console.log('✅ SoloAlert JS loaded successfully!');\"",
+        "test": "node -e \"require('./dist/arisealert.min.js'); console.log('✅ arisealert JS loaded successfully!');\"",
         "prepublishOnly": "npm run build"
     },
     "files": [
@@ -38,12 +38,12 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/aniqueali29/soloalert.git"
+        "url": "git+https://github.com/aniqueali29/arisealert.git"
     },
     "bugs": {
-        "url": "https://github.com/aniqueali29/soloalert/issues"
+        "url": "https://github.com/aniqueali29/arisealert/issues"
     },
-    "homepage": "https://aniqueali29.github.io/soloalert",
+    "homepage": "https://aniqueali29.github.io/arisealert",
     "devDependencies": {
         "chokidar-cli": "^3.0.0",
         "clean-css-cli": "^5.6.3",
@@ -54,6 +54,6 @@
         "npm": ">=6.0.0"
     },
     "dependencies": {
-        "soloalert": "^1.1.10"
+        "arisealert": "^1.1.10"
     }
 }
