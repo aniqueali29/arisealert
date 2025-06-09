@@ -1,0 +1,33 @@
+# Dev source
+src/
+
+# Node modules
+node_modules/
+
+# System
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+*.pid
+
+# Build scripts
+build/
+watch/
+chokidar/
+scripts/
+
+# Test & Demo files
+test/
+tests/
+demo.html
+demo/
+*.test.js
+
+# Git & CI files
+.gitignore
+.github/
+.npmignore

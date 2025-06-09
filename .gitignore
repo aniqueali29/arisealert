@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+
+# Build artifacts
+dist/
+*.log
+
+# Optional NPM files
+package-lock.json
+npm-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Temp / Cache
+.cache/
+*.tmp
+*.swp
+
+# Mac/Linux generated files
+ehthumbs.db
+Icon?
+._*
+
+# Windows generated files
+Desktop.ini
+
+# Git backup files
+*.orig
+*.rej
+
+# Env files (if needed later)
+.env
+.env.local
+.env.*
+
+# Ignore demos if they’re not part of production
+demo.html
+demo/
+
+# Ignore build/watch logs
+*.pid

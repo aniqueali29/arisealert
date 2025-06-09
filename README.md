@@ -9,12 +9,12 @@
 
 ## ✨ Features
 
-- 🎨 **Solo Leveling Inspired Design** - Authentic cyberpunk styling
-- 🌈 **Customizable Colors** - Match your brand or theme
-- ⚡ **Zero Dependencies** - Lightweight and fast
-- 📱 **Mobile Friendly** - Responsive design
-- 🎯 **Easy to Use** - Simple API, powerful features
-- 🔧 **TypeScript Support** - Full type definitions included
+- 🎨 **Solo Leveling Inspired Design** - Authentic cyberpunk styling.
+- 🌈 **Customizable Colors** - Match your brand or theme.
+- ⚡ **Zero Dependencies** - Lightweight and fast.
+- 📱 **Mobile Friendly** - Responsive design.
+- 🎯 **Easy to Use** - Simple API, powerful features.
+- 🔧 **TypeScript Support** - Full type definitions included.
 
 ## 🚀 Quick Start
 
@@ -30,8 +30,6 @@ npm install soloalert
 \`\`\`
 
 ## 📖 Documentation
-
-Visit our [complete documentation](https://yourusername.github.io/soloalert) for detailed guides and examples.
 
 ## 🎯 Basic Usage
 
