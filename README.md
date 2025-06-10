@@ -58,7 +58,7 @@ AriseAlert.fire({
     message: 'Your skills have been upgraded',
     icon: '🔥',
     type: 'success',           // success, error, warning, info
-    theme: 'cyberpunk',        // cyberpunk, neon, dark, light
+    theme: 'dark',             // dark, light
     timer: 3000,               // Auto-close timer
     showCloseButton: true,
     confirmButtonText: 'Accept',
@@ -76,9 +76,7 @@ if (result.isConfirmed) {
 
 ## 🎨 Available Themes
 
-- `cyberpunk` - Solo Leveling inspired (default)
-- `neon` - Bright neon colors
-- `dark` - Dark mode
+- `dark` - Dark mode - Solo Leveling inspired (default)
 - `light` - Light mode
 
 ## 🌟 Browser Support
