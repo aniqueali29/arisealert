@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +8,342 @@
     <link rel="stylesheet" href="./src/main.css">
     <link rel="stylesheet" href="./src/arisealert.css">
     <style>
+        /* Main Content */
+        .main-content {
+            margin-top: 70px;
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #ffffff, #00d4ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0d4ff;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #a0d4ff;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styling */
+        .section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Demo Grid */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-btn {
+            padding: 1rem 1.5rem;
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .demo-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .demo-btn:hover::before {
+            left: 100%;
+        }
+
+        .demo-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
+        }
+
+        .demo-btn.success {
+            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .demo-btn.success:hover {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: rgba(0, 255, 136, 0.6);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+        }
+
+        .demo-btn.danger {
+            border-color: rgba(255, 68, 68, 0.3);
+            background: rgba(255, 68, 68, 0.05);
+        }
+
+        .demo-btn.danger:hover {
+            background: rgba(255, 68, 68, 0.1);
+            border-color: rgba(255, 68, 68, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 68, 68, 0.2);
+        }
+
+        .demo-btn.warning {
+            border-color: rgba(255, 170, 0, 0.3);
+            background: rgba(255, 170, 0, 0.05);
+        }
+
+        .demo-btn.warning:hover {
+            background: rgba(255, 170, 0, 0.1);
+            border-color: rgba(255, 170, 0, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 170, 0, 0.2);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(0, 20, 40, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #0099cc, #00d4ff);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            background: rgba(0, 212, 255, 0.05);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #b8e6ff;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-list li {
+            color: #a0d4ff;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .feature-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-actions {
+                display: none;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00d4ff, #0099cc);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #33ddff, #00b3e6);
+        }
+
         .example-card {
             margin-bottom: 30px;
             border: 1px solid rgba(0, 212, 255, 0.3);
@@ -71,18 +406,216 @@
             margin: 0;
             color: #00d4ff;
         }
+
+        /* Enhanced styling for theme control section */
+        .example-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .example-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .example-header h3 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.4em;
+        }
+
+        .example-tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #0066cc;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .example-preview {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .code-block {
+            background: #0a0a0a;
+            border: 1px solid #00ccff;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .run-btn-theme {
+            background: linear-gradient(135deg, #00ccff, #0099cc);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .run-btn-theme:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 204, 255, 0.3);
+        }
+
+        .run-btn-theme.force-dark {
+            background: linear-gradient(135deg, #333, #555);
+        }
+
+        .run-btn-theme.force-light {
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            color: #333;
+        }
+
+        .run-btn-theme.current-theme {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .theme-explanation {
+            background: rgba(0, 204, 255, 0.1);
+            border: 1px solid rgba(0, 204, 255, 0.3);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .theme-explanation p {
+            margin: 5px 0;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        .theme-explanation em {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        #currentThemeDisplay {
+            color: #00ccff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .mobile-nav-actions {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem 0;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-actions {
+                display: none;
+                /* Hide desktop version */
+            }
+
+            .mobile-nav-actions {
+                display: flex;
+                /* Show mobile version */
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>⚔️ AriseAlert</h1>
-            <p>Enhanced Solo Leveling Alert Library with Customizable Colors</p>
+    <!-- Professional Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo">⚔️</div>
+            <h1>AriseAlert</h1>
         </div>
 
+        <ul class="nav-menu">
+            <li><a href="./index.html#demo" class="nav-link">Demo</a></li>
+            <li><a href="./index.html#features" class="nav-link">Features</a></li>
+            <li><a href="#api" class="nav-link">API</a></li>
+            <li><a href="#support" class="nav-link">Support</a></li>
+            
+            <!-- Mobile-only navigation actions -->
+            <div class="mobile-nav-actions">
+                <button class="nav-btn" onclick="location.reload()">📚 Documentation</button>
+                <button class="theme-toggle nav-btn primary" id="themeToggle" onclick="toggleGlobalTheme()">
+                    <span class="theme-indicator">🌙</span>
+                    <span id="themeText">Dark Mode</span>
+                </button>
+            </div>
+        </ul>
+
+        <!-- Desktop navigation actions -->
+        <div class="nav-actions">
+            <button class="nav-btn" onclick="location.reload()">📚 Documentation</button>
+            <button class="theme-toggle nav-btn primary" id="themeToggle" onclick="toggleGlobalTheme()">
+                <span class="theme-indicator">🌙</span>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Complete Developer Guide</h1>
+            <p>Enhanced Solo Leveling Alert Library with Customizable Colors</p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">18+</span>
+                    <span class="stat-label">Alert Types</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">ZERO</span>
+                    <span class="stat-label">Dependencies</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">~15KB</span>
+                    <span class="stat-label">Bundle Size</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div class="container">
+
         <div class="section">
-            <h2>📚 Complete Developer Guide</h2>
+            <!-- <h2>📚 Complete Developer Guide</h2> -->
 
             <!-- Quick Start Tabs -->
             <div class="tabs-container">
@@ -113,15 +646,6 @@
                                 </div>
 
                                 <div class="method-card">
-                                    <h4>📁 Local Files</h4>
-                                    <div class="code-block">
-                                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                                        <pre><code>&lt;link rel="stylesheet" href="path/to/arisealert.css"&gt;
-     &lt;script src="path/to/arisealert.js"&gt;&lt;/script&gt;</code></pre>
-                                    </div>
-                                </div>
-
-                                <div class="method-card">
                                     <h4>📦 NPM Package</h4>
                                     <div class="code-block">
                                         <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
@@ -129,6 +653,15 @@
                                             # or
                                             yarn add arisealert
                                         </code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="method-card">
+                                    <h4>📁 Local Files</h4>
+                                    <div class="code-block">
+                                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                                        <pre><code>&lt;link rel="stylesheet" href="path/to/arisealert.css"&gt;
+     &lt;script src="path/to/arisealert.js"&gt;&lt;/script&gt;</code></pre>
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +715,7 @@
                         <div class="code-block">
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.info('SYSTEM INFO', 'All systems operational');`)">▶️
-                                Demo</button>
+                                <span id="demoText">Demo</span></button>
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <pre><code>// Info Alert
 AriseAlert.info('SYSTEM INFO', 'All systems operational');
@@ -213,12 +746,75 @@ AriseAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.jobChange({title: 'NOTIFICATION', message: 'Job changed to Shadow Monarch'});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>AriseAlert.jobChange({
   title: 'NOTIFICATION',
   message: 'Your job has changed&lt;br&gt;&lt;br&gt;[necromancer] → [shadow monarch]',
   icon: 'crown'
 });</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Theme Change -->
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h3>Theme Control</h3>
+                            <div class="example-tags">
+                                <span class="tag">Theming</span>
+                            </div>
+                        </div>
+                        <div class="example-preview">
+                            <p>Control global theme and see individual theme overrides</p>
+                        </div>
+                        <div class="code-block">
+                            <div class="demo-buttons">
+                                <!-- Current Theme Demo -->
+                                <button class="run-btn-theme current-theme"
+                                    onclick="runCode(`AriseAlert.info('Current Theme', 'This alert uses your current global theme: ${currentGlobalTheme.toUpperCase()}');`)">
+                                    🎨 <span class="demo-text">Demo</span>
+                                </button>
+
+                                <!-- Force Dark Theme Demo -->
+                                <button class="run-btn-theme force-dark" onclick="runCodeWithTheme(`AriseAlert.fire({
+                    title: 'Forced Dark Theme', 
+                    message: 'This alert FORCES dark theme regardless of your global setting',
+                    theme: 'dark',
+                    type: 'warning'
+                });`, 'dark')">
+                                    🌙 Force Dark
+                                </button>
+
+                                <!-- Force Light Theme Demo -->
+                                <button class="run-btn-theme force-light" onclick="runCodeWithTheme(`AriseAlert.fire({
+                    title: 'Forced Light Theme', 
+                    message: 'This alert FORCES light theme regardless of your global setting',
+                    theme: 'light',
+                    type: 'success'
+                });`, 'light')">
+                                    ☀️ Force Light
+                                </button>
+                            </div>
+
+                            <div class="theme-explanation">
+                                <p><strong>Current Global Theme:</strong> <span id="currentThemeDisplay">Dark</span></p>
+                                <p><em>The first button follows your global theme. The other buttons override it
+                                        temporarily.</em></p>
+                            </div>
+
+                            <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                            <pre><code>// Method 1: Use current global theme
+AriseAlert.success('Success!', 'Uses whatever theme is currently set');
+
+// Method 2: Force a specific theme (overrides global)
+AriseAlert.fire({
+    title: 'Custom Theme Alert',
+    message: 'This ignores global theme',
+    type: 'info',
+    theme: 'dark' // Forces dark even if global is light
+});
+
+// Method 3: Change global theme for all future alerts
+AriseAlert.setGlobalTheme('light'); // All alerts now use light theme</code></pre>
                         </div>
                     </div>
 
@@ -237,7 +833,7 @@ AriseAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.fire({title: 'CONFIRM?', message: 'Proceed?', showCancelButton: true}).then(result => { if(result.confirmed) AriseAlert.success('CONFIRMED!', 'Action completed'); });`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>AriseAlert.fire({
   title: 'ENTER DUNGEON?',
   message: 'High-risk S-Rank dungeon',
@@ -268,7 +864,7 @@ AriseAlert.warning('EXTREME DANGER', 'S-RANK MONSTER DETECTED!');</code></pre>
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.fire({title: 'ENTER NAME', input: 'text', placeholder: 'Your name'});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>// Text Input
 AriseAlert.fire({
   title: 'ENTER NAME',
@@ -325,7 +921,7 @@ AriseAlert.fire({
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.loading({title: 'LOADING...', timer: 2000});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>// Loading Spinner
 AriseAlert.loading({
   title: 'LOADING...',
@@ -356,7 +952,7 @@ AriseAlert.fire({
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn" onclick="runCode(`AriseAlert.timer({timerDuration: 5});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>AriseAlert.timer({
   title: 'DUNGEON CLOSING',
   timerDuration: 10,
@@ -380,7 +976,7 @@ AriseAlert.fire({
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.toast({title: 'ACHIEVEMENT!', message: '+500 XP'});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>AriseAlert.toast({
   title: 'NEW ACHIEVEMENT!',
   message: 'First Kill Bonus +500 XP',
@@ -406,7 +1002,7 @@ AriseAlert.fire({
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.fire({title: 'ITEM FOUND!', image: 'https://via.placeholder.com/200', icon: 'star'});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>AriseAlert.fire({
   title: 'RARE ITEM ACQUIRED!',
   message: 'Legendary weapon found!',
@@ -431,7 +1027,7 @@ AriseAlert.fire({
 
                         <div class="code-block">
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
-                            <button class="run-btn" onclick="showStats()">▶️ Demo</button>
+                            <button class="run-btn" onclick="showStats()">▶️ <span id="demoText"></span></button>
 
                             <pre><code>function showStats() {
     AriseAlert.fire({
@@ -467,7 +1063,7 @@ AriseAlert.fire({
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.fire({title: 'STEP 1', message: 'First step', confirmButtonText: 'Next'}).then(() => AriseAlert.fire({title: 'STEP 2', message: 'Second step', confirmButtonText: 'Next'})).then(() => AriseAlert.fire({title: 'STEP 3', message: 'Steps Completed'}));`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
 
                             <pre><code>AriseAlert.fire({
   title: 'STEP 1 OF 3',
@@ -512,7 +1108,7 @@ AriseAlert.fire({
                             <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
                             <button class="run-btn"
                                 onclick="runCode(`AriseAlert.fire({title: 'SHADOW MONARCH', icon: 'crown', customBg: '#1a0033'});`)">▶️
-                                Demo</button>
+                                <span id="demoText"></span></button>
                             <pre><code>AriseAlert.fire({
   title: 'SHADOW MONARCH',
   message: 'Power of shadows flows through you',
@@ -530,7 +1126,7 @@ AriseAlert.fire({
                 <div class="tab-content" id="api">
                     <div class="api-grid">
                         <div class="api-section">
-                            <h3>🔧 Main Methods</h3>
+                            <h3>🔧 Main Methods</h3><br>
                             <div class="api-methods">
                                 <div class="method-item">
                                     <div class="method-signature">
@@ -590,8 +1186,30 @@ AriseAlert.fire({
                             </div>
                         </div>
 
+                        <!-- NEW THEME API SECTION -->
                         <div class="api-section">
-                            <h3>⚙️ Configuration Options</h3>
+                            <h3>🎨 Theme Methods</h3><br>
+                            <div class="api-methods">
+                                <div class="method-item">
+                                    <div class="method-signature">
+                                        <code>AriseAlert.setGlobalTheme(theme)</code>
+                                        <span class="return-type">→ void</span>
+                                    </div>
+                                    <p>Set global theme for all alerts: 'dark' or 'light'</p>
+                                </div>
+
+                                <div class="method-item">
+                                    <div class="method-signature">
+                                        <code>theme: 'light' | 'dark'</code>
+                                        <span class="return-type">option</span>
+                                    </div>
+                                    <p>Individual alert theme override in options object</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="api-section">
+                            <h3>⚙️ Configuration Options</h3><br>
                             <div class="options-table">
                                 <div class="option-row">
                                     <div class="option-name">title</div>
@@ -614,6 +1232,11 @@ AriseAlert.fire({
                                     <div class="option-desc">'default' | 'success' | 'error' | 'warning'</div>
                                 </div>
                                 <div class="option-row">
+                                    <div class="option-name">theme</div>
+                                    <div class="option-type">string</div>
+                                    <div class="option-desc">'dark' | 'light' - Individual theme override</div>
+                                </div>
+                                <div class="option-row">
                                     <div class="option-name">showCancelButton</div>
                                     <div class="option-type">boolean</div>
                                     <div class="option-desc">Show cancel button</div>
@@ -627,11 +1250,6 @@ AriseAlert.fire({
                                     <div class="option-name">input</div>
                                     <div class="option-type">string</div>
                                     <div class="option-desc">'text' | 'email' | 'password' | 'textarea' | 'select'</div>
-                                </div>
-                                <div class="option-row">
-                                    <div class="option-name">validator</div>
-                                    <div class="option-type">function</div>
-                                    <div class="option-desc">Input validation function</div>
                                 </div>
                             </div>
                         </div>
@@ -779,74 +1397,6 @@ AriseAlert.fire({
                 </div>
             </div>
         </div>
-
-        <!-- Features -->
-        <div class="section">
-            <h2>✨ Key Features</h2>
-            <div class="instructions">
-                <div class="instruction-card">
-                    <h3>🎮 Solo Leveling Style</h3>
-                    <p>• Futuristic cyber design<br>
-                        • Animated corner brackets<br>
-                        • Glowing border effects<br>
-                        • System notification feel<br>
-                        • Job change special effects<br>
-                        • Orbitron font styling</p>
-                </div>
-
-                <div class="instruction-card">
-                    <h3>🎨 Visual Features</h3>
-                    <p>• Authentic Solo Leveling design<br>
-                        • Customizable background colors<br>
-                        • Animated glowing borders<br>
-                        • Smooth transitions<br>
-                        • Responsive design<br>
-                        • Special effects for errors/warnings</p>
-                </div>
-
-                <div class="instruction-card">
-                    <h3>🚀 Alert Types</h3>
-                    <p>• Info alerts (default blue theme)<br>
-                        • Success alerts (green)<br>
-                        • Error alerts (red with shake effect)<br>
-                        • Warning alerts (orange with pulse)<br>
-                        • Job change (special green)<br>
-                        • Custom colored alerts</p>
-                </div>
-
-                <div class="instruction-card">
-                    <h3>🧠 Interaction Features</h3>
-                    <p>• Multi-step alerts with input chaining<br>
-                        • Support for select, number, and text inputs<br>
-                        • Real-time validation capability<br>
-                        • Rich HTML message rendering<br>
-                        • Input results handling with Promises<br>
-                        • Click-outside-to-close support</p>
-                </div>
-
-                <div class="instruction-card">
-                    <h3>🔌 Integration Features</h3>
-                    <p>• Works seamlessly with any JS framework<br>
-                        • Compatible with React, Vue, Angular<br>
-                        • Can be triggered via API/webhooks<br>
-                        • Easy to bind to button clicks/events<br>
-                        • Can return data to backend functions<br>
-                        • Designed for scalability and reuse</p>
-                </div>
-
-                <div class="instruction-card">
-                    <h3>⚙️ Technical Features</h3>
-                    <p>• Zero dependencies<br>
-                        • Lightweight and fast<br>
-                        • Promise-based callbacks<br>
-                        • Auto-close timers<br>
-                        • Mobile-friendly<br>
-                        • Easy to customize</p>
-                </div>
-
-            </div>
-        </div>
-
         <script>
             // Tab functionality
             document.addEventListener('DOMContentLoaded', function () {
@@ -903,6 +1453,9 @@ AriseAlert.fire({
         </script>
 
         <script>
+
+
+
             function showStats() {
                 AriseAlert.fire({
                     title: 'PLAYER STATS',
@@ -918,8 +1471,181 @@ AriseAlert.fire({
                     icon: 'gear'
                 });
             }
-        </script>
 
+        </script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+
+                // Update active state
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Close mobile menu
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+    </script>
+        <script>
+            // Enhanced theme management script with localStorage persistence
+            let currentGlobalTheme = localStorage.getItem('ariseAlertTheme') || 'dark';
+
+            function initializeTheme() {
+                // Apply theme immediately on page load
+                document.body.setAttribute('data-theme', currentGlobalTheme);
+
+                // Set AriseAlert theme if available
+                if (typeof AriseAlert !== 'undefined') {
+                    AriseAlert.setGlobalTheme(currentGlobalTheme);
+                }
+
+                // Update UI elements
+                updateThemeUI();
+                updateAllDemoButtons();
+            }
+
+            function toggleGlobalTheme() {
+                // Toggle theme
+                currentGlobalTheme = currentGlobalTheme === 'dark' ? 'light' : 'dark';
+
+                // Save to localStorage
+                localStorage.setItem('ariseAlertTheme', currentGlobalTheme);
+
+                // Apply theme to document
+                document.body.setAttribute('data-theme', currentGlobalTheme);
+
+                // Set AriseAlert theme if available
+                if (typeof AriseAlert !== 'undefined') {
+                    AriseAlert.setGlobalTheme(currentGlobalTheme);
+                }
+
+                // Update UI
+                updateThemeUI();
+                updateAllDemoButtons();
+            }
+
+            function updateThemeUI() {
+                const themeToggle = document.getElementById('themeToggle');
+                const themeText = document.getElementById('themeText');
+                const themeIndicator = document.querySelector('.theme-indicator');
+                const currentThemeDisplay = document.getElementById('currentThemeDisplay');
+
+                if (currentGlobalTheme === 'light') {
+                    if (themeToggle) themeToggle.classList.add('light');
+                    if (themeText) themeText.textContent = 'Light Mode';
+                    if (themeIndicator) themeIndicator.textContent = '☀️';
+                    if (currentThemeDisplay) currentThemeDisplay.textContent = 'Light';
+                } else {
+                    if (themeToggle) themeToggle.classList.remove('light');
+                    if (themeText) themeText.textContent = 'Dark Mode';
+                    if (themeIndicator) themeIndicator.textContent = '🌙';
+                    if (currentThemeDisplay) currentThemeDisplay.textContent = 'Dark';
+                }
+            }
+
+            function updateAllDemoButtons() {
+                const demoTexts = document.querySelectorAll('.demo-text, [id*="demoText"]');
+
+                demoTexts.forEach(demoText => {
+                    if (currentGlobalTheme === 'dark') {
+                        demoText.textContent = 'Demo in Dark';
+                    } else {
+                        demoText.textContent = 'Demo in Light';
+                    }
+                });
+            }
+
+            // Initialize theme on page load (call this ASAP to prevent flash)
+            initializeTheme();
+
+            // Also initialize when DOM is ready
+            document.addEventListener('DOMContentLoaded', function () {
+                initializeTheme();
+            });
+
+            // Listen for storage changes from other tabs/windows
+            window.addEventListener('storage', function (e) {
+                if (e.key === 'ariseAlertTheme') {
+                    currentGlobalTheme = e.newValue || 'dark';
+                    initializeTheme();
+                }
+            });
+
+            // Rest of your existing functions remain the same...
+            function runCode(code) {
+                try {
+                    eval(code);
+                } catch (error) {
+                    console.error('Error running code:', error);
+                    if (typeof AriseAlert !== 'undefined') {
+                        AriseAlert.error('Code Error', 'Failed to execute the example code');
+                    }
+                }
+            }
+
+            function runCodeWithTheme(code, theme) {
+                const originalTheme = currentGlobalTheme;
+                if (theme && typeof AriseAlert !== 'undefined') {
+                    AriseAlert.setGlobalTheme(theme);
+                }
+
+                try {
+                    eval(code);
+                } catch (error) {
+                    console.error('Error running code:', error);
+                    if (typeof AriseAlert !== 'undefined') {
+                        AriseAlert.error('Code Error', 'Failed to execute the example code');
+                    }
+                }
+
+                setTimeout(() => {
+                    if (typeof AriseAlert !== 'undefined') {
+                        AriseAlert.setGlobalTheme(originalTheme);
+                    }
+                    updateAllDemoButtons();
+                }, 100);
+            }
+
+            function copyCode(button) {
+                const codeBlock = button.nextElementSibling.querySelector('code');
+                if (codeBlock) {
+                    navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                        button.textContent = '✅ Copied!';
+                        setTimeout(() => {
+                            button.textContent = '📋 Copy';
+                        }, 2000);
+                    }).catch(() => {
+                        button.textContent = '❌ Failed';
+                        setTimeout(() => {
+                            button.textContent = '📋 Copy';
+                        }, 2000);
+                    });
+                }
+            }
+        </script>
         <script src="./src/main.js"></script>
         <script src="./src/arisealert.js"></script>
 
