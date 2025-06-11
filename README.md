@@ -24,8 +24,8 @@
 
 ### CDN
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aniqueali29/arisealert/dist/arisealert.min.css">
-<script src="https://cdn.jsdelivr.net/gh/aniqueali29/arisealert/dist/arisealert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aniqueali29/arisealert@v1.0.2/dist/arisealert.min.css">
+<script src="https://cdn.jsdelivr.net/gh/aniqueali29/arisealert@v1.0.2/dist/arisealert.min.js"></script>
 ```
 
 ### NPM
