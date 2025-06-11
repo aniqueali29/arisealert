@@ -25,23 +25,22 @@
  }
  
  .arise-theme-light {
-   --arise-primary: #6a00ff;
-   --arise-primary-light: #8a33ff;
-   --arise-primary-dark: #4600cc;
-   --arise-bg: linear-gradient(135deg, rgba(240, 240, 255, 0.95) 0%, rgba(250, 250, 255, 0.98) 100%);
-   --arise-text: #2c1810;
-   --arise-text-light: #5d4037;
-   --arise-border: #6a00ff;
-   --arise-shadow: rgba(106, 0, 255, 0.6);
-   --arise-success: #00c853;
-   --arise-error: #d32f2f;
-   --arise-warning: #ff6f00;
-   --arise-overlay: rgba(106, 0, 255, 0.1);
-   --arise-shadow-monarch: rgba(106, 0, 255, 0.8);
-   --arise-glow-purple: rgba(138, 43, 226, 0.7);
-   --arise-dark-purple: #4a148c;
- }
- 
+  --arise-primary: #d4af37;
+  --arise-primary-light: #ffd700;
+  --arise-primary-dark: #b8860b;
+  --arise-bg: linear-gradient(135deg, rgba(250, 248, 240, 0.95) 0%, rgba(255, 253, 245, 0.98) 100%);
+  --arise-text: #5d4037;
+  --arise-text-light: #8d6e63;
+  --arise-border: #d4af37;
+  --arise-shadow: rgba(212, 175, 55, 0.8);
+  --arise-success: #4caf50;
+  --arise-error: #d32f2f;
+  --arise-warning: #ff9800;
+  --arise-overlay: rgba(139, 69, 19, 0.1);
+  --arise-shadow-monarch: rgba(212, 175, 55, 0.8);
+  --arise-glow-purple: rgba(212, 175, 55, 0.7);
+  --arise-dark-purple: #8b4513;
+}
  /* Alert Overlay */
  .arisealert-overlay {
      position: fixed;
@@ -64,11 +63,6 @@
    visibility: visible;
  }
 
- /* Enhanced Solo Leveling Overlay for Light Theme */
- .arise-theme-light .arisealert-overlay {
-   /* background: var(--arise-overlay); */
-   /* backdrop-filter: blur(20px) saturate(1.2); */
- }
  .arise-theme-light .arisealert-overlay::before {
    content: '';
    position: absolute;
@@ -120,33 +114,23 @@
 
  /* Enhanced Light Theme Panel */
  .arise-theme-light .arisealert-panel {
-   background: var(--arise-bg);
-   border: 4px solid transparent;
-   box-shadow: 
-     0 0 40px var(--arise-shadow-monarch),
-     0 0 80px rgba(106, 0, 255, 0.3),
-     inset 0 0 20px rgba(255, 255, 255, 0.1);
-   font-family: 'Rajdhani', 'Orbitron', monospace;
-   position: relative;
- }
+  background: linear-gradient(135deg, rgba(250, 248, 240, 0.95) 0%, rgba(255, 253, 245, 0.98) 100%);
+  box-shadow: 
+    0 0 40px rgba(212, 175, 55, 0.6),
+    0 0 80px rgba(212, 175, 55, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
  .arise-theme-light .arisealert-panel::before {
-   background: linear-gradient(45deg, #6a00ff, #8a2be2, #9932cc, #6a00ff, #4b0082);
-   background-size: 600% 600%;
-   border-radius: 8px;
-   animation: monarch-border-flow 4s ease-in-out infinite;
- }
- .arise-theme-light .arisealert-panel::after {
-   content: '';
-   position: absolute;
-   top: -8px;
-   left: -8px;
-   right: -8px;
-   bottom: -8px;
-   background: linear-gradient(45deg, transparent, rgba(106, 0, 255, 0.1), transparent);
-   z-index: -2;
-   border-radius: 12px;
-   animation: shadow-monarch-aura 3s ease-in-out infinite alternate;
- }
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b, #d4af37, #daa520);
+  background-size: 600% 600%;
+  border-radius: 12px;
+  /* animation: dungeon-border-flow 4s ease-in-out infinite; */
+}
+
+.arise-theme-light .arisealert-panel::after {
+  background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+  /* animation: dungeon-aura 3s ease-in-out infinite alternate; */
+}
 
  /* Solo Leveling Shadow Particles for Light Theme */
  .arise-theme-light .arisealert-panel .shadow-particles {
@@ -160,12 +144,7 @@
  }
  .arise-theme-light .arisealert-panel .shadow-particles::before,
  .arise-theme-light .arisealert-panel .shadow-particles::after {
-   content: '◆';
-   position: absolute;
-   color: var(--arise-primary);
-   font-size: 12px;
-   opacity: 0.6;
-   animation: float-particles 6s linear infinite;
+   color: #d4af37;
  }
  .arise-theme-light .arisealert-panel .shadow-particles::before {
    top: 10%;
@@ -182,7 +161,7 @@
  .arisealert-error {
    background: rgba(40,5,5,.98);
    border-color: var(--arise-error);
-   animation: .5s ease-in-out infinite alternate danger-shake;
+   /* animation: .5s ease-in-out infinite alternate danger-shake; */
  }
  .arisealert-error::before {
    background: linear-gradient(45deg,var(--arise-error),#c22,var(--arise-error),#c22);
@@ -190,7 +169,7 @@
  .arisealert-warning {
    background: rgba(40,25,5,.98);
    border-color: var(--arise-warning);
-   animation: 2s ease-in-out infinite warning-pulse;
+   /* animation: 2s ease-in-out infinite warning-pulse; */
  }
  .arisealert-warning::before {
    background: linear-gradient(45deg,var(--arise-warning),#c80,var(--arise-warning),#c80);
@@ -212,9 +191,8 @@
      inset 0 0 20px rgba(255, 255, 255, 0.1);
  }
  .arise-theme-light .arisealert-error::before {
-   background: linear-gradient(45deg, #d32f2f, #f44336, #e57373, #d32f2f);
-   background-size: 400% 400%;
- }
+  background: linear-gradient(45deg, #d32f2f, #f44336, #ef5350, #d32f2f);
+}
  
  .arise-theme-light .arisealert-warning {
    background: linear-gradient(135deg, rgba(255, 248, 225, 0.95) 0%, rgba(255, 253, 245, 0.98) 100%);
@@ -222,12 +200,11 @@
    box-shadow: 
      0 0 30px rgba(255, 111, 0, 0.4),
      inset 0 0 20px rgba(255, 255, 255, 0.1);
-   animation: monarch-warning-pulse 2s ease-in-out infinite;
+   /* animation: monarch-warning-pulse 2s ease-in-out infinite; */
  }
  .arise-theme-light .arisealert-warning::before {
-   background: linear-gradient(45deg, #ff6f00, #ff9800, #ffb74d, #ff6f00);
-   background-size: 400% 400%;
- }
+  background: linear-gradient(45deg, #ff9800, #ffa726, #ffb74d, #ff9800);
+}
  
  .arise-theme-light .arisealert-success {
    background: linear-gradient(135deg, rgba(232, 245, 233, 0.95) 0%, rgba(240, 248, 240, 0.98) 100%);
@@ -237,9 +214,8 @@
      inset 0 0 20px rgba(255, 255, 255, 0.1);
  }
  .arise-theme-light .arisealert-success::before {
-   background: linear-gradient(45deg, #00c853, #4caf50, #81c784, #00c853);
-   background-size: 400% 400%;
- }
+  background: linear-gradient(45deg, #4caf50, #66bb6a, #81c784, #4caf50);
+}
  
  /* Alert Elements */
  .arisealert-corners {
@@ -284,12 +260,11 @@
  
  /* Enhanced Light Theme Corners */
  .arise-theme-light .arisealert-corner {
-   border: 4px solid var(--arise-border);
-   box-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     0 0 40px rgba(106, 0, 255, 0.3);
-   animation: monarch-corner-glow 3s ease-in-out infinite alternate;
- }
+  border: 4px solid #d4af37;
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 40px rgba(212, 175, 55, 0.3);
+}
  .arise-theme-light .arisealert-corner::before {
    content: '';
    position: absolute;
@@ -320,20 +295,18 @@
  
  /* Enhanced Light Theme Lines */
  .arise-theme-light .arisealert-line {
-   height: 4px;
-   background: linear-gradient(90deg,
-     transparent 0%, 
-     rgba(106, 0, 255, 0.2) 10%, 
-     var(--arise-primary) 30%,
-     rgba(138, 43, 226, 0.8) 50%,
-     var(--arise-primary) 70%,
-     rgba(106, 0, 255, 0.2) 90%,
-     transparent 100%);
-   box-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     0 0 40px rgba(106, 0, 255, 0.2);
-   animation: monarch-line-pulse 2s ease-in-out infinite alternate;
- }
+  background: linear-gradient(90deg,
+    transparent 0%, 
+    rgba(212, 175, 55, 0.3) 10%, 
+    #d4af37 30%,
+    #ffd700 50%,
+    #d4af37 70%,
+    rgba(212, 175, 55, 0.3) 90%,
+    transparent 100%);
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 40px rgba(212, 175, 55, 0.2);
+}
  .arise-theme-light .arisealert-line::after {
    content: '';
    position: absolute;
@@ -362,25 +335,16 @@
  
  /* Enhanced Light Theme Icons */
  .arise-theme-light .arisealert-icon .icon {
-   color: var(--arise-border);
-   text-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     0 0 40px rgba(106, 0, 255, 0.3);
-   animation: monarch-icon-glow 2s ease-in-out infinite alternate;
-   position: relative;
- }
- .arise-theme-light .arisealert-icon::before {
-   content: '';
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 80px;
-   height: 80px;
-   background: radial-gradient(circle, rgba(106, 0, 255, 0.1) 0%, transparent 70%);
-   transform: translate(-50%, -50%);
-   border-radius: 50%;
-   animation: icon-aura-pulse 3s ease-in-out infinite;
- }
+  color: #d4af37;
+  text-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.8),
+    0 0 40px rgba(212, 175, 55, 0.3);
+}
+
+.arise-theme-light .arisealert-icon::before {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+}
+
 
  .arisealert-title {
    text-align: center;
@@ -395,29 +359,18 @@
  
  /* Enhanced Light Theme Title */
  .arise-theme-light .arisealert-title {
-   font-family: 'Rajdhani', sans-serif;
-   font-weight: 700;
-   background: linear-gradient(135deg, var(--arise-dark-purple) 0%, var(--arise-primary) 50%, var(--arise-dark-purple) 100%);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   text-shadow: none;
-   position: relative;
-   animation: title-glow 3s ease-in-out infinite alternate;
- }
- .arise-theme-light .arisealert-title::after {
-   content: attr(data-text);
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   background: linear-gradient(135deg, var(--arise-primary) 0%, transparent 50%, var(--arise-primary) 100%);
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   opacity: 0.3;
-   animation: title-shine 4s ease-in-out infinite;
- }
+  background: linear-gradient(135deg, #8b4513 0%, #d4af37 50%, #8b4513 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.arise-theme-light .arisealert-title::after {
+  background: linear-gradient(135deg, #d4af37 0%, transparent 50%, #d4af37 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
  .arisealert-message {
    text-align: center;
@@ -468,38 +421,18 @@
  
  /* Enhanced Light Theme Buttons */
  .arise-theme-light .arisealert-btn {
-   background: linear-gradient(135deg, var(--arise-primary) 0%, var(--arise-primary-dark) 100%);
-   border: 3px solid transparent;
-   border-radius: 8px;
-   color: #ffffff;
-   font-family: 'Rajdhani', sans-serif;
-   font-weight: 700;
-   box-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     0 4px 15px rgba(106, 0, 255, 0.3);
-   position: relative;
-   overflow: hidden;
-   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
- }
- .arise-theme-light .arisealert-btn::before {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: -100%;
-   width: 100%;
-   height: 100%;
-   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-   transition: left 0.5s;
- }
- .arise-theme-light .arisealert-btn:hover {
-   transform: translateY(-4px) scale(1.05);
-   box-shadow: 
-     0 0 30px var(--arise-shadow-monarch),
-     0 8px 25px rgba(106, 0, 255, 0.4);
- }
- .arise-theme-light .arisealert-btn:hover::before {
-   left: 100%;
- }
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #ffffff;
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.arise-theme-light .arisealert-btn:hover {
+  box-shadow: 
+    0 0 30px rgba(212, 175, 55, 0.8),
+    0 8px 25px rgba(212, 175, 55, 0.4);
+}
  .arise-theme-light .arisealert-btn.cancel {
    background: linear-gradient(135deg, #424242 0%, #616161 100%);
    border-color: transparent;
@@ -528,22 +461,16 @@
  
  /* Enhanced Light Theme Input */
  .arise-theme-light .arisealert-input {
-   background: rgba(255, 255, 255, 0.9);
-   border: 3px solid rgba(106, 0, 255, 0.2);
-   border-radius: 8px;
-   color: var(--arise-text);
-   font-family: 'Rajdhani', sans-serif;
-   box-shadow: inset 0 2px 5px rgba(106, 0, 255, 0.1);
-   transition: all 0.3s ease;
- }
- .arise-theme-light .arisealert-input:focus {
-   border-color: var(--arise-primary);
-   box-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     inset 0 2px 8px rgba(106, 0, 255, 0.2);
-   transform: translateY(-2px);
- }
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  box-shadow: inset 0 2px 5px rgba(212, 175, 55, 0.1);
+}
 
+.arise-theme-light .arisealert-input:focus {
+  border-color: #d4af37;
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.6),
+    inset 0 2px 8px rgba(212, 175, 55, 0.2);
+}
  .arisealert-select {
    width: 100%;
    padding: 12px;
@@ -557,12 +484,10 @@
  
  /* Enhanced Light Theme Select */
  .arise-theme-light .arisealert-select {
-   background: rgba(255, 255, 255, 0.9);
-   border: 3px solid rgba(106, 0, 255, 0.2);
-   color: var(--arise-text);
-   font-family: 'Rajdhani', sans-serif;
-   box-shadow: inset 0 2px 5px rgba(106, 0, 255, 0.1);
- }
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  box-shadow: inset 0 2px 5px rgba(212, 175, 55, 0.1);
+}
+
 
  .arisealert-progress {
    width: 100%;
@@ -582,18 +507,15 @@
  
  /* Enhanced Light Theme Progress */
  .arise-theme-light .arisealert-progress {
-   background: rgba(200, 200, 200, 0.3);
-   border: 2px solid rgba(106, 0, 255, 0.2);
-   border-radius: 12px;
- }
- .arise-theme-light .arisealert-progress-bar {
-   background: linear-gradient(90deg, var(--arise-primary), var(--arise-primary-dark), var(--arise-primary));
-   box-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     inset 0 2px 8px rgba(255, 255, 255, 0.3);
-   animation: progress-energy 2s ease-in-out infinite alternate;
- }
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
 
+.arise-theme-light .arisealert-progress-bar {
+  background: linear-gradient(90deg, #d4af37, #b8860b, #d4af37);
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.6),
+    inset 0 2px 8px rgba(255, 255, 255, 0.3);
+}
  .arisealert-timer {
    font-size: 24px;
    color: var(--arise-primary);
@@ -604,14 +526,11 @@
  
  /* Enhanced Light Theme Timer */
  .arise-theme-light .arisealert-timer {
-   color: var(--arise-border);
-   font-family: 'Rajdhani', sans-serif;
-   font-weight: 700;
-   text-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     0 0 40px rgba(106, 0, 255, 0.3);
-   animation: timer-pulse 1s ease-in-out infinite alternate;
- }
+  color: #d4af37;
+  text-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.8),
+    0 0 40px rgba(212, 175, 55, 0.3);
+}
 
  .arisealert-toast {
    position: fixed;
@@ -637,12 +556,11 @@
  
  /* Enhanced Light Theme Spinner */
  .arise-theme-light .arisealert-spinner {
-   border: 4px solid rgba(106, 0, 255, 0.2);
-   border-top: 4px solid var(--arise-primary);
-   border-right: 4px solid var(--arise-primary-light);
-   box-shadow: 0 0 20px var(--arise-shadow-monarch);
-   animation: monarch-spin 1s linear infinite;
- }
+  border: 4px solid rgba(212, 175, 55, 0.3);
+  border-top: 4px solid #d4af37;
+  border-right: 4px solid #ffd700;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
 
  .arisealert-image {
    max-width: 100%;
@@ -654,13 +572,11 @@
  
  /* Enhanced Light Theme Image */
  .arise-theme-light .arisealert-image {
-   border: 3px solid var(--arise-border);
-   border-radius: 12px;
-   box-shadow: 
-     0 0 20px var(--arise-shadow-monarch),
-     0 4px 15px rgba(106, 0, 255, 0.2);
-   transition: transform 0.3s ease;
- }
+  border: 3px solid #d4af37;
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 4px 15px rgba(212, 175, 55, 0.2);
+}
  .arise-theme-light .arisealert-image:hover {
    transform: scale(1.02);
  }
@@ -1068,16 +984,9 @@
  }
 
  .arise-theme-light .mana-crystal::after {
-   content: '';
-   position: absolute;
-   top: 10px;
-   right: 10px;
-   width: 12px;
-   height: 12px;
-   background: linear-gradient(45deg, #8b00ff, #6a00ff);
-   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-   animation: mana-crystal-glow 2s ease-in-out infinite alternate;
- }
+  background: linear-gradient(45deg, #d4af37, #ffd700);
+}
+
 
  @keyframes mana-crystal-glow {
    0% { 
@@ -1100,22 +1009,52 @@
  }
 
  .arise-theme-light .system-window::before {
-   content: 'SYSTEM';
-   position: absolute;
-   top: -15px;
-   left: 20px;
-   background: linear-gradient(135deg, #6a00ff, #8b00ff);
-   color: white;
-   padding: 2px 8px;
-   font-size: 10px;
-   font-weight: 700;
-   letter-spacing: 1px;
-   border-radius: 3px;
-   animation: system-blink 3s ease-in-out infinite;
- }
-
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+}
  @keyframes system-blink {
    0%, 90% { opacity: 1; }
    95% { opacity: 0.3; }
    100% { opacity: 1; }
  }
+
+
+ 
+/* New Dungeon-Specific Animations */
+@keyframes dungeon-border-flow {
+  0% { background-position: 0% 50% }
+  25% { background-position: 100% 50% }
+  50% { background-position: 200% 50% }
+  75% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+@keyframes dungeon-aura {
+  0% { 
+    opacity: 0.2;
+    transform: scale(0.95) rotate(0deg);
+  }
+  50% { 
+    opacity: 0.4;
+    transform: scale(1.05) rotate(1deg);
+  }
+  100% { 
+    opacity: 0.2;
+    transform: scale(0.95) rotate(0deg);
+  }
+}
+
+/* Add Dungeon Rank Classes */
+.arise-theme-light.rank-s {
+  --arise-primary: #ffd700;
+  --arise-shadow-monarch: rgba(255, 215, 0, 0.8);
+}
+
+.arise-theme-light.rank-a {
+  --arise-primary: #d4af37;
+  --arise-shadow-monarch: rgba(212, 175, 55, 0.7);
+}
+
+.arise-theme-light.rank-b {
+  --arise-primary: #b8860b;
+  --arise-shadow-monarch: rgba(184, 134, 11, 0.6);
+}
