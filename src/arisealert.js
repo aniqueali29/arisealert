@@ -172,6 +172,26 @@ class AriseAlert {
         this.overlay.appendChild(this.container);
     }
 
+    setupKeyboardEvents() {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && this.container) {
+                const confirmBtn = this.container.querySelector('.arisealert-btn:not(.cancel)');
+                if (confirmBtn) {
+                    confirmBtn.click();
+                    e.preventDefault(); // Prevent default form submission behavior
+                    e.stopPropagation(); // Stop event bubbling
+                }
+            } else if (e.key === 'Escape' && this.container) {
+                const cancelBtn = this.container.querySelector('.arisealert-btn.cancel');
+                if (cancelBtn) {
+                    cancelBtn.click();
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }
+        });
+    }
+
     createPanel(e) {
         var t, o = document.createElement("div");
         o.className = "arisealert-panel arisealert-" + e.type;
@@ -182,44 +202,49 @@ class AriseAlert {
         e.input && (r = this.createInputHtml(e));
         e.image && (i = `<img src="${e.image}" class="arisealert-image" alt="Alert Image">`);
         e.progress && (s = `
-        <div class="arisealert-progress">
-          <div class="arisealert-progress-bar" id="arisealert-progress-bar"></div>
-        </div>
-      `);
+            <div class="arisealert-progress">
+              <div class="arisealert-progress-bar" id="arisealert-progress-bar"></div>
+            </div>
+        `);
         e.showTimer && (n = `<div class="arisealert-timer" id="arisealert-timer">${e.timerDuration}</div>`);
         "loading" === e.icon && (l = '<div class="arisealert-spinner"></div>');
 
         o.innerHTML = `
-        <div class="arisealert-corners">
-          <div class="arisealert-corner top-left"></div>
-          <div class="arisealert-corner top-right"></div>
-          <div class="arisealert-corner bottom-left"></div>
-          <div class="arisealert-corner bottom-right"></div>
-        </div>
-        
-        <div class="arisealert-line top"></div>
-        <div class="arisealert-line bottom"></div>
-        
-        ${"loading" !== e.icon ? `
-          <div class="arisealert-icon">
-            <div class="icon">${this.renderIcon(e.icon)}</div>
-          </div>
-        ` : l}
-        
-        <div class="arisealert-title">${e.title}</div>
-        
-        <div class="arisealert-message">${e.message}</div>
-        
-        ${i}
-        ${s}
-        ${n}
-        ${r}
-        
-        ${e.showButtons ? this.createButtons(e) : ""}
-      `;
+            <div class="arisealert-corners">
+              <div class="arisealert-corner top-left"></div>
+              <div class="arisealert-corner top-right"></div>
+              <div class="arisealert-corner bottom-left"></div>
+              <div class="arisealert-corner bottom-right"></div>
+            </div>
+    
+            <div class="arisealert-line top"></div>
+            <div class="arisealert-line bottom"></div>
+    
+            ${"loading" !== e.icon ? `
+              <div class="arisealert-icon">
+                <div class="icon">${this.renderIcon(e.icon)}</div>
+              </div>
+            ` : l}
+    
+            <div class="arisealert-title">${e.title}</div>
+            <div class="arisealert-message">${e.message}</div>
+            ${i}
+            ${s}
+            ${n}
+            ${r}
+            ${e.showButtons ? this.createButtons(e) : ""}
+        `;
+
         this.container.appendChild(o);
-        e.showButtons && this.setupButtonEvents(o, e);
+
+        if (e.showButtons) {
+            this.setupButtonEvents(o, e);
+        }
+
+        // Add keyboard event support
+        this.setupKeyboardEvents();
     }
+
 
     createInputHtml(t) {
         switch (t.input) {
@@ -329,6 +354,7 @@ class AriseAlert {
     }
 
     close(e) {
+        document.removeEventListener('keydown', this.keyboardHandler);
         this.autoCloseTimer && clearTimeout(this.autoCloseTimer);
         this.progressInterval && clearInterval(this.progressInterval);
         this.timerInterval && clearInterval(this.timerInterval);
