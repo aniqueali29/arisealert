@@ -1,6 +1,6 @@
 {
     "name": "arisealert",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Enhanced Solo Leveling styled alert library with customizable colors and animations.",
     "main": "dist/arisealert.min.js",
     "style": "dist/arisealert.min.css",
@@ -18,6 +18,7 @@
         "README.md",
         "LICENSE"
     ],
+    
     "keywords": [
         "alert",
         "modal",
