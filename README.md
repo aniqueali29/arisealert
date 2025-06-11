@@ -78,6 +78,7 @@ if (result.isConfirmed) {
 
 - `dark` - Dark mode - Solo Leveling inspired (default)
 - `light` - Light mode
+- `Change global theme for all future alerts` - AriseAlert.setGlobalTheme('light'); // All alerts now use light theme 
 
 ## 🌟 Browser Support
 
