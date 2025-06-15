@@ -1,5 +1,4 @@
 # 🎮 AriseAlert
-
 <div align="center">
   
   [![npm version](https://img.shields.io/npm/v/arisealert?style=for-the-badge&color=00d4ff)](https://www.npmjs.com/package/arisealert)
@@ -7,6 +6,8 @@
   [![GitHub stars](https://img.shields.io/github/stars/aniqueali29/arisealert?style=for-the-badge&color=ff6b6b)](https://github.com/aniqueali29/arisealert)
   
   **A futuristic JavaScript alert library inspired by Solo Leveling's cyberpunk aesthetic**
+  
+  🚀 **[DEMO](https://aniqueali29.github.io/arisealert)**
   
 </div>
 
